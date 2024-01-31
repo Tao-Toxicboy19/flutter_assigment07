@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assigment07/screens/profile_screen.dart';
-import 'package:flutter_assigment07/screens/stock_screen.dart';
+import 'package:flutter_assigment07/screens/books_screen.dart';
+import 'package:flutter_assigment07/screens/product_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -10,12 +10,12 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  String _title = "Home";
+  String _title = "Product";
   int _currentIndex = 1;
 
   final List<Widget> _pages = [
-    const StockScreen(),
-    const ProfileScreen(),
+    const ProductScreen(),
+    const BooksScreen(),
   ];
 
   void onTapped(int index) {
@@ -24,10 +24,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
         _currentIndex = index;
         switch (index) {
           case 0:
-            _title = "Stock";
+            _title = "Product";
             break;
           case 1:
-            _title = "Profile";
+            _title = "Books";
             break;
         }
       },
@@ -62,11 +62,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
           // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.layers),
-            label: 'Stock',
+            label: 'Products',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Books',
           ),
         ],
         onTap: (value) {
