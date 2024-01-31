@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_assigment07/app_route.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 
@@ -19,7 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     // await MySharedPreferences.setSharedPreference('welcomeStatus', true);
 
     // ไปยังหน้า Login
-    // Navigator.pushReplacementNamed(context, AppRouter.login);
+    Navigator.pushReplacementNamed(context, AppRouter.dashboard);
   }
 
   // ฟังก์ชันกำหนดภาพที่ใช้แสดงใน Intro
