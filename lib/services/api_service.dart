@@ -8,9 +8,12 @@ class ApiService {
   Future<List<ProductElement>> getProducts() async {
     try {
       final result = await dio.get('https://dummyjson.com/products');
-      logger.f(result.data);
-      final Product products = productFromJson(result.data);
-      return products.products;
+      logger.f(result.data['products']);
+      final List<ProductElement> products = List<ProductElement>.from(
+        (result.data['products'] as List<dynamic>)
+            .map((productJson) => ProductElement.fromJson(productJson)),
+      );
+      return products;
     } catch (err) {
       logger.e(err);
       return [];
